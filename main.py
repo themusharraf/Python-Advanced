@@ -1,3 +1,6 @@
+import timeit
+
+
 def generators():
     for x in range(10_000):
         yield x
@@ -20,4 +23,8 @@ def for_loop():
 
 
 if __name__ == '__main__':
-    gen = generators()
+    time_for = timeit.timeit(stmt=for_loop, number=10_000)
+    time_yield = timeit.timeit(stmt=generator_return, number=10_000)
+
+    print("For loop", round(time_for, 5))
+    print("Yield ", round(time_yield, 5))
