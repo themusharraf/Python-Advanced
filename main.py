@@ -24,9 +24,9 @@ def for_loop():
 
 if __name__ == '__main__':
     time_for = timeit.timeit(stmt=for_loop, number=10_000)
-    time_yield = timeit.timeit(stmt=generator_return, number=10_000)
-    yields = timeit.timeit(stmt=generators, number=10_000)
+    time_yield = timeit.timeit(stmt=generators, number=10_000)
 
     print("For loop", round(time_for, 5))
-    print("Yield func  ", round(time_yield, 5))
-    print("Yield ", round(yields, 5))
+    print("Yield   ", round(time_yield, 5))
+    faster = (time_for / time_yield) * 100
+    print(f"{(round(faster, 2))} % tez")
