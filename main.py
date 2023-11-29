@@ -12,4 +12,5 @@ def for_loop():
 
 
 if __name__ == '__main__':
-    ...
+    gen = generators()
+    print(next(gen))
