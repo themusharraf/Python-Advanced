@@ -23,8 +23,7 @@ def my_decorator(func):
 def my_func():
     s = []
     print("function ishlab turibdi! ")
-    for x in range(20_000):
-        print(x)
+    for x in range(200000_000):
         s.append(x)
 
 
