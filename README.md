@@ -13,7 +13,7 @@ Ilova qilingan gif python generatorlarini ko'rsatadi,
 https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4b07-8954-4f9eea043745
 
 
-decorator
+# Decorator
 Dekoratorlar yuqori darajadagi funktsiyalarni chaqirish uchun oddiy sintaksisni ta'minlaydi .
 
 Ta'rifga ko'ra, dekorator boshqa funktsiyani qabul qiladigan va ikkinchi funktsiyaning harakatini aniq o'zgartirmasdan kengaytiradigan funktsiyadir.
@@ -57,5 +57,5 @@ Decorator funksiya argument sifatida funksiya qabul qiladi.
         decorated_func = make_decorator(my_func)
         decorated_func()
 
-# Dekorator ishlayapti
-# Dekorator uchun ishlatiladigan funksiya
+      # Dekorator ishlayapti
+      # Dekorator uchun ishlatiladigan funksiya
