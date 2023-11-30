@@ -1,15 +1,11 @@
 def my_decorator(func):
-    def wrapper():
-        print("Funktsiya ishga tushdi! ")
-        func()
-        print("Funktsiya tuxtadi! ")
-
-    return wrapper
+    print("Funktsiya ishga tushdi! ")
+    func()
+    print("Funktsiya tuxtadi! ")
 
 
-@my_decorator
-def add_function(a: int, b: int, ) -> int:
-    return a + b
+def my_func():
+    print("hello def my function")
 
 
-print(add_function(3, 5))
+my_decorator(my_func)
