@@ -1,6 +1,6 @@
 # Advanced_Python
 Python-ga chuqurroq sho'ng'ing va kodlash mahoratingizni oshiring.🟢📡
-📠 Python generatori:
+# Python generatori:
 
 • Iterator obyektini qaytaruvchi funksiyaning maxsus turi.
 • Qo'ng'iroq qiluvchi tomonidan so'ralganda birma-bir qiymatlar ketma-ketligini ishlab chiqaradi.
