@@ -30,3 +30,5 @@ if __name__ == '__main__':
     print("Yield   ", round(time_yield, 5))
     faster = (time_for / time_yield) * 100
     print(f"{(round(faster, 2))} % tez")
+
+
