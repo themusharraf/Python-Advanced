@@ -10,21 +10,50 @@
 #
 # my_decorator(my_func)
 # ________________________________________________________________
-def my_decorator(func):
-    def wrapper():
-        print("Funksiya start")
-        func()
-        print("Funksiya stop!")
+# def my_decorator(func):
+#     def wrapper():
+#         print("Funksiya start")
+#         func()
+#         print("Funksiya stop!")
+#
+#     return wrapper
+#
+#
+# @my_decorator
+# def my_func():
+#     s = []
+#     print("function ishlab turibdi! ")
+#     for x in range(200000_000):
+#         s.append(x)
+#
+#
+# my_func()
 
-    return wrapper
+# ________________________________________________________________
+def divide_decorator(func):
+    def divide_inner(a, b):
+        try:
+            return func(a, b)
+        except ZeroDivisionError:
+            print("Nolga bo'lish mumkin emas!")
+
+    return divide_inner
 
 
-@my_decorator
-def my_func():
-    s = []
-    print("function ishlab turibdi! ")
-    for x in range(200000_000):
-        s.append(x)
+def second_zero(func):  # zero 0 - > 1 function
+    def inner(a, b):
+        if b == 0:
+            b += 1
+        return func(a, b)
+
+    return inner
 
 
-my_func()
+@second_zero
+@divide_decorator
+def divider(a, b):
+    return a / b
+
+
+print(divider(10, 5))  # 2.0
+print(divider(10, 0))  # 10.0
