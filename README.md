@@ -59,3 +59,33 @@ Decorator funksiya argument sifatida funksiya qabul qiladi.
 
       # Dekorator ishlayapti
       # Dekorator uchun ishlatiladigan funksiya
+Bitta funksiyada bir nechta decorator ishlatishimiz ham mumkin, bunda birinchisidan boshlab decoratorlar ishlab keladi.
+
+    def divide_decorator(func):
+          def divide_inner(a, b):
+              try:
+                  return func(a, b)
+              except ZeroDivisionError:
+                  print("Nolga bo'lish mumkin emas!")
+
+          return divide_inner
+
+
+      def second_zero(func):  # zero 0 - > 1 function
+          def inner(a, b):
+              if b == 0:
+                  b += 1
+              return func(a, b)
+
+          return inner
+
+
+      @second_zero
+      @divide_decorator
+      def divider(a, b):
+          return a / b
+
+
+      print(divider(10, 5))  # 2.0
+      print(divider(10, 0))  # 10.0
+
