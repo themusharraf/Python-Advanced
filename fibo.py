@@ -8,4 +8,4 @@ def fib(n: int):
         a = b
         b = c
         print(c)
-fib(6)
+fib(1000)
