@@ -1,14 +1,14 @@
-def my_decorator(func):
-    print("Funktsiya ishga tushdi! ")
-    func()
-    print("Funktsiya tuxtadi! ")
-
-
-def my_func():
-    print("hello def my function")
-
-
-my_decorator(my_func)
+# def my_decorator(func):
+#     print("Funktsiya ishga tushdi! ")
+#     func()
+#     print("Funktsiya tuxtadi! ")
+#
+#
+# def my_func():
+#     print("hello def my functions ishlayabdi")
+#
+#
+# my_decorator(my_func)
 # ________________________________________________________________
 # def my_decorator(func):
 #     def wrapper():
@@ -57,7 +57,7 @@ my_decorator(my_func)
 #
 # print(divider(10, 5))  # 2.0
 # print(divider(10, 0))  # 10.0
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 # data_list = []
 #
 #
