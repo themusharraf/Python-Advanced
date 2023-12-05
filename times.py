@@ -14,4 +14,4 @@
 # natija = end - start
 # print("Dastur sekund oladi: ", natija)
 
-job = []
+

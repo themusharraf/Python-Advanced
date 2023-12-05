@@ -10,11 +10,16 @@
 #         print(c)
 # fib(1000)
 
+from functools import lru_cache
+
+
+
 def fib(n):
     if n in {0, 1}:  # Base case n == 1 or n == 2 return 1
         return n
     return fib(n - 1) + fib(n - 2)  # Recursive case
 
 
-for x in range(15):
-    print(fib(x))
+print(fib(100))
+# for x in range(15):
+#     print(fib(x))
