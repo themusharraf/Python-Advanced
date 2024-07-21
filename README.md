@@ -2,14 +2,13 @@
 
 ## Python-ga chuqurroq sho'ng'ing va kodlash mahoratingizni oshiring.📡
 
-##  Python generatori:
+## Python generatori:
 
--  Iterator obyektini qaytaruvchi funksiyaning maxsus turi.
--  Qo'ng'iroq qiluvchi tomonidan so'ralganda birma-bir qiymatlar ketma-ketligini ishlab chiqaradi.
--  Generatorlar ijroni to'xtatib turish va ketma-ketlikda keyingi qiymatni qaytarish uchun "yield" kalit so'zi yordamida
-    aniqlanadi.
--  Bu xotiradan yanada samarali foydalanish imkonini beradi va cheksiz ketma-ketlikni yaratishi mumkin.
-
+- Iterator obyektini qaytaruvchi funksiyaning maxsus turi.
+- Qo'ng'iroq qiluvchi tomonidan so'ralganda birma-bir qiymatlar ketma-ketligini ishlab chiqaradi.
+- Generatorlar ijroni to'xtatib turish va ketma-ketlikda keyingi qiymatni qaytarish uchun "yield" kalit so'zi yordamida
+  aniqlanadi.
+- Bu xotiradan yanada samarali foydalanish imkonini beradi va cheksiz ketma-ketlikni yaratishi mumkin.
 
 https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4b07-8954-4f9eea043745
 
@@ -17,19 +16,18 @@ https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4
 
 #### Dekoratorlar yuqori darajadagi funktsiyalarni chaqirish uchun oddiy sintaksisni ta'minlaydi. Ta'rifga ko'ra, dekorator boshqa funktsiyani qabul qiladigan va ikkinchi funktsiyaning harakatini aniq o'zgartirmasdankengaytiradigan funktsiyadir.Bu chalkash tuyuladi, lekin aslida unday emas, ayniqsa dekorativlar qanday ishlashiga oid bir nechta misollarni ko'rganingizdan keyin. Ushbu maqoladagi barcha misollarni bu erda topishingiz mumkin.
 
-
 ```python
   def hello(name):
-          # ichki funksiya
-          def get_name():
-              return f"Hello, {name}!"
+    # ichki funksiya
+    def get_name():
+        return f"Hello, {name}!"
 
-          # ichki funksiyani qaytarish
-          return get_name
+    # ichki funksiyani qaytarish
+    return get_name
 
 
-      hello_func = hello("Sarvar")
-      print(hello_func())
+hello_func = hello("Sarvar")
+print(hello_func())
 ```
 
 <img width="539" alt="image" src="https://github.com/themusharraf/Advanced_Python/assets/122869450/7ad2db79-74a5-4660-a414-dcfef0edf978">
@@ -38,57 +36,60 @@ https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4
 
 ```python
    def make_decorator(func):
-          def inner():
-              # Ichki funksiya orqali func xususiyatlarini o'zgartirishimiz mumkin
-              print("Dekorator ishlayapti")
+    def inner():
+        # Ichki funksiya orqali func xususiyatlarini o'zgartirishimiz mumkin
+        print("Dekorator ishlayapti")
 
-              func()
+        func()
 
-          # Ichki funksiya qaytariladi
-          return inner
-
-
-        def my_func():
-            print("Dekorator uchun ishlatiladigan funksiya")
+    # Ichki funksiya qaytariladi
+    return inner
 
 
-        decorated_func = make_decorator(my_func)
-        decorated_func()
+def my_func():
+    print("Dekorator uchun ishlatiladigan funksiya")
 
-      # Dekorator ishlayapti
-      # Dekorator uchun ishlatiladigan funksiya
+
+decorated_func = make_decorator(my_func)
+decorated_func()
+
+# Dekorator ishlayapti
+# Dekorator uchun ishlatiladigan funksiya
 ```
 
 ### Bitta funksiyada bir nechta decorator ishlatishimiz ham mumkin, bunda birinchisidan boshlab decoratorlar ishlab keladi.
+
 ```python
 
-    def divide_decorator(func):
-          def divide_inner(a, b):
-              try:
-                  return func(a, b)
-              except ZeroDivisionError:
-                  print("Nolga bo'lish mumkin emas!")
+def divide_decorator(func):
+    def divide_inner(a, b):
+        try:
+            return func(a, b)
+        except ZeroDivisionError:
+            print("Nolga bo'lish mumkin emas!")
 
-          return divide_inner
-
-
-      def second_zero(func):  # zero 0 - > 1 function
-          def inner(a, b):
-              if b == 0:
-                  b += 1
-              return func(a, b)
-
-          return inner
+    return divide_inner
 
 
-      @second_zero
-      @divide_decorator
-      def divider(a, b):
-          return a / b
+def second_zero(func):  # zero 0 - > 1 function
+    def inner(a, b):
+        if b == 0:
+            b += 1
+        return func(a, b)
+
+    return inner
 
 
-      print(divider(10, 5))  # 2.0
-      print(divider(10, 0))  # 10.0
+@second_zero
+
+
+@divide_decorator
+def divider(a, b):
+    return a / b
+
+
+print(divider(10, 5))  # 2.0
+print(divider(10, 0))  # 10.0
 ```
 
 # Typing modul
@@ -182,3 +183,116 @@ def process_data(data: List[Dict[str, Union[int, float]]]) -> Optional[float]:
 ## Xulosa
 
 ### typing moduli Python kodlaringizni tushunarliroq, qulayroq va xatolarni kamaytirish uchun juda foydali. Bu modul bilan yozilgan kodlar kelajakdagi o'zgarishlar uchun yanada aniqroq tuzilmani ta'minlaydi.
+
+# Unpacking and packing
+
+## Unpacking va packing - Python dasturlash tilida juda foydali texnikalar bo‘lib, ular ob’ektlarni ochish va yig‘ish jarayonlarini osonlashtiradi.
+
+## Unpacking
+
+### Unpacking ob’ektni bir necha qismlarga ajratish va har bir qismni alohida o‘zgaruvchiga tayinlash imkonini beradi. Bu ko‘pincha ro‘yxatlar va tuple (to‘plam)lar bilan ishlatiladi.
+
+## Tuple bilan unpacking
+
+```python
+my_tuple = (1, 2, 3)
+a, b, c = my_tuple
+print(a)  # 1
+print(b)  # 2
+print(c)  # 3
+```
+
+## Ro'yxat bilan unpacking
+
+```python
+my_list = [4, 5, 6]
+x, y, z = my_list
+print(x)  # 4
+print(y)  # 5
+print(z)  # 6
+```
+
+## Funksiya chaqirilishi natijasini unpacking qilish
+
+```python
+def get_coordinates():
+    return (50.4501, 30.5234)
+
+
+lat, lon = get_coordinates()
+print(f"Latitude: {lat}, Longitude: {lon}")
+```
+
+## Packing
+
+### Packing esa aksincha, bir nechta qiymatlarni bitta tuple yoki ro‘yxatga yig‘ish imkonini beradi.
+
+## Tuple bilan packing
+
+```python
+a, b, c = 1, 2, 3
+my_tuple = (a, b, c)
+print(my_tuple)  # (1, 2, 3)
+```
+
+## Ro'yxat bilan packing
+
+```python
+x, y, z = 4, 5, 6
+my_list = [x, y, z]
+print(my_list)  # [4, 5, 6]
+```
+
+## Funksiya orqali packing
+
+```python
+def create_point(x, y, z):
+    return (x, y, z)
+
+
+point = create_point(7, 8, 9)
+print(point)  # (7, 8, 9)
+```
+
+# *args va **kwargs bilan ishlash
+
+### Unpacking va packing ko‘pincha *args va **kwargs bilan birgalikda ishlatiladi.
+
+### - `*args` funksiyaga kiritilgan argumentlarni tuple ko‘rinishida qabul qiladi,
+
+### - `**kwargs` esa kalit-qiymat juftliklarini dictionary ko‘rinishida qabul qiladi.
+
+```python
+def my_function(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+
+my_function(1, 2, 3, name="Alice", age=30)
+
+# (1, 2, 3)
+# {'name': 'Alice', 'age': 30}
+
+```
+
+## Unpacking va packingni birgalikda ishlatish
+
+```python
+def calculate_sum(a, b, c):
+    return a + b + c
+
+
+my_numbers = [1, 2, 3]
+result = calculate_sum(*my_numbers)
+print(result)  # 6
+
+
+# **kwargs bilan unpacking # noqa
+def print_info(name, age):
+    print(f"Name: {name}, Age: {age}")
+
+
+info = {"name": "Alice", "age": 30}
+print_info(**info)
+# Name: Alice, Age: 30
+```
