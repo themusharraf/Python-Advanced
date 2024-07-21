@@ -1,4 +1,4 @@
-# Advanced_Python
+# Advanced Python
 
 ## Python-ga chuqurroq sho'ng'ing va kodlash mahoratingizni oshiring.📡
 
@@ -91,7 +91,7 @@ https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4
       print(divider(10, 0))  # 10.0
 ```
 
-# typing modul
+# Typing modul
 
 ## Asosiy turlar
 
