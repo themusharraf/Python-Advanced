@@ -305,8 +305,6 @@ Qanday ishlaydi: Bu metod bog'langan modelni JOIN operatori yordamida bitta so'r
 Qachon ishlatish kerak: Agar sizda ForeignKey yoki OneToOneField bilan bog'langan ma'lumotlar mavjud bo'lsa va siz ularga tez-tez murojaat qilmoqchi bo'lsangiz, select_relatedni ishlatishingiz kerak.
 Misol:
 
-python
-Copy code
 # Model example
 ```python
 class Author(models.Model):
