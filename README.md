@@ -296,3 +296,54 @@ info = {"name": "Alice", "age": 30}
 print_info(**info)
 # Name: Alice, Age: 30
 ```
+
+## Django'da select_related va prefetch_related optimizatsiya metodlari bo'lib, ular ORM (Object-Relational Mapping) so'rovlarining samaradorligini oshirish uchun ishlatiladi. Ular har xil turdagi ma'lumotlar bazasi so'rovlarini oldindan yuklab olish orqali so'rovlar sonini kamaytiradi, bu esa bajarilish vaqtini tezlashtiradi.
+
+### select_related
+Nimani ishlatadi: select_related odatda ForeignKey yoki OneToOneField maydonlar bilan ishlatiladi.
+Qanday ishlaydi: Bu metod bog'langan modelni JOIN operatori yordamida bitta so'rovda oladi. Bu esa bog'liq bo'lgan ma'lumotlarni olish uchun kerak bo'ladigan alohida so'rovlar sonini kamaytiradi.
+Qachon ishlatish kerak: Agar sizda ForeignKey yoki OneToOneField bilan bog'langan ma'lumotlar mavjud bo'lsa va siz ularga tez-tez murojaat qilmoqchi bo'lsangiz, select_relatedni ishlatishingiz kerak.
+Misol:
+
+python
+Copy code
+# Model example
+```class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+
+# Query with select_related
+books = Book.objects.select_related('author').all()
+
+for book in books:
+    print(book.author.name)  # Author ma'lumotlari bitta JOIN so'rovda keladi
+```
+### prefetch_related
+Nimani ishlatadi: prefetch_related ManyToManyField yoki ForeignKey maydonlar uchun ishlatiladi, lekin u select_relateddan farqli o'laroq, so'rovlarni ikkita alohida so'rov sifatida yuboradi, keyin esa natijalarni Python tarafida bog'laydi.
+Qanday ishlaydi: U bog'langan ob'ektlarni alohida so'rovda yuklab oladi va asosiy so'rov bilan natijalarni bog'laydi. Bu katta hajmdagi bog'langan ob'ektlar mavjud bo'lgan holatlarda yaxshi ishlaydi.
+Qachon ishlatish kerak: Agar sizda ManyToMany yoki katta hajmdagi ForeignKey bog'lanishlar mavjud bo'lsa, prefetch_relatedni ishlatish samarali bo'ladi.
+Misol:
+
+# Model example
+```class Book(models.Model):
+    title = models.CharField(max_length=100)
+    authors = models.ManyToManyField(Author)
+
+#Query with prefetch_related
+```books = Book.objects.prefetch_related('authors').all()
+
+for book in books:
+    for author in book.authors.all():
+        print(author.name)  # Authors alohida so'rovda yuklab olinadi
+```
+### Xulosa
+- `select_related` bir-to-bir yoki bir-to-ko'p bog'lanishlar uchun optimal va bitta so'rovda ma'lumotlarni olib keladi.
+- `prefetch_related` ko'p-to-ko'p bog'lanishlar yoki katta hajmdagi bog'langan ob'ektlar uchun ishlatiladi va so'rovlar sonini kamaytiradi, lekin ularni alohida-alohida bajaradi.
+
+
+
+
+
