@@ -335,7 +335,7 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
 
 #Query with prefetch_related
-```books = Book.objects.prefetch_related('authors').all()
+books = Book.objects.prefetch_related('authors').all()
 
 for book in books:
     for author in book.authors.all():
