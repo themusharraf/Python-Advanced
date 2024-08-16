@@ -308,7 +308,8 @@ Misol:
 python
 Copy code
 # Model example
-```class Author(models.Model):
+```python
+class Author(models.Model):
     name = models.CharField(max_length=100)
 
 class Book(models.Model):
@@ -328,7 +329,8 @@ Qachon ishlatish kerak: Agar sizda ManyToMany yoki katta hajmdagi ForeignKey bog
 Misol:
 
 # Model example
-```class Book(models.Model):
+```python
+class Book(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author)
 
