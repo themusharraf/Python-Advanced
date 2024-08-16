@@ -297,7 +297,8 @@ print_info(**info)
 # Name: Alice, Age: 30
 ```
 
-## Django'da select_related va prefetch_related optimizatsiya metodlari bo'lib, ular ORM (Object-Relational Mapping) so'rovlarining samaradorligini oshirish uchun ishlatiladi. Ular har xil turdagi ma'lumotlar bazasi so'rovlarini oldindan yuklab olish orqali so'rovlar sonini kamaytiradi, bu esa bajarilish vaqtini tezlashtiradi.
+### Django'da select_related va prefetch_related optimizatsiya metodlari bo'lib, ular ORM (Object-Relational Mapping) so'rovlarining samaradorligini oshirish uchun ishlatiladi. 
+- Ular har xil turdagi ma'lumotlar bazasi so'rovlarini oldindan yuklab olish orqali so'rovlar sonini kamaytiradi, bu esa bajarilish vaqtini tezlashtiradi.
 
 ### select_related
 Nimani ishlatadi: select_related odatda ForeignKey yoki OneToOneField maydonlar bilan ishlatiladi.
