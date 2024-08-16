@@ -335,7 +335,7 @@ Hashable obyektlar ma'lumotlar tuzilmalarida, ayniqsa lug'atlar va setlarda, sam
 
 - Yaxshi dasturlash amaliyotlaridan biri sifatida, kalit yoki set elementi sifatida hashable obyektlarni tanlash kerak, bu esa kodingizni ishonchli va samarali qiladi.
 
-
+---
 
 ### Django'da select_related va prefetch_related optimizatsiya metodlari bo'lib, ular ORM (Object-Relational Mapping) so'rovlarining samaradorligini oshirish uchun ishlatiladi. 
 - Ular har xil turdagi ma'lumotlar bazasi so'rovlarini oldindan yuklab olish orqali so'rovlar sonini kamaytiradi, bu esa bajarilish vaqtini tezlashtiradi.
