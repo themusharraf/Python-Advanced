@@ -296,6 +296,46 @@ info = {"name": "Alice", "age": 30}
 print_info(**info)
 # Name: Alice, Age: 30
 ```
+### Python'da hashable va unhashable tushunchalari muhim ahamiyatga ega, ayniqsa, ma'lumotlar tuzilmalari va lug'atlar bilan ishlashda.
+
+### Hashable (Hashlanadigan)
+- Hashable obyektlar - bu o'zlarining hash() qiymatiga ega bo'lgan obyektlar. Bu qiymat doimiy bo'lib, obyektning umri davomida o'zgarmaydi. Hashable obyektlarni lug'at (dictionary) kalitlari yoki set elementlari sifatida ishlatish mumkin.
+
+### Hashable obyektlar:
+
+1. Integer (int)
+2. Float (float)
+3. String (str)
+4. Tuple (tuple), agar uning ichidagi barcha elementlar ham hashable bo'lsa
+5. Frozen set (frozenset)
+Misol:
+```python
+hash(42)  # Integer hashable
+hash("hello")  # String hashable
+hash((1, 2, 3))  # Tuple hashable
+```
+---
+### Unhashable (Hashlanmaydigan)
+- Unhashable obyektlar - bu o'zlarining hash() qiymatiga ega bo'lmagan obyektlar. Bunday obyektlarni lug'at kalitlari yoki set elementlari sifatida ishlatib bo'lmaydi, chunki ular mutable (o'zgartirilishi mumkin) va ularning qiymatlari o'zgarishi mumkin.
+
+### Unhashable obyektlar:
+
+1. List (list)
+2. Dictionary (dict)
+3. Set (set)
+4. Tuple (tuple), agar uning ichidagi biror element unhashable bo'lsa
+Misol:
+```python
+hash([1, 2, 3])  # List unhashable
+hash({1: "one", 2: "two"})  # Dictionary unhashable
+hash({1, 2, 3})  # Set unhashable
+```
+### Nima uchun bu muhim?
+Hashable obyektlar ma'lumotlar tuzilmalarida, ayniqsa lug'atlar va setlarda, samarali indekslash va izlashni ta'minlaydi. Unhashable obyektlar esa o'zgaruvchan bo'lgani uchun ularni kalit yoki element sifatida ishlatish xavfli, chunki bu obyektlar o'zgarganda hash qiymati ham o'zgaradi va noto'g'ri xatti-harakatlar yuzaga kelishi mumkin.
+
+- Yaxshi dasturlash amaliyotlaridan biri sifatida, kalit yoki set elementi sifatida hashable obyektlarni tanlash kerak, bu esa kodingizni ishonchli va samarali qiladi.
+
+
 
 ### Django'da select_related va prefetch_related optimizatsiya metodlari bo'lib, ular ORM (Object-Relational Mapping) so'rovlarining samaradorligini oshirish uchun ishlatiladi. 
 - Ular har xil turdagi ma'lumotlar bazasi so'rovlarini oldindan yuklab olish orqali so'rovlar sonini kamaytiradi, bu esa bajarilish vaqtini tezlashtiradi.
