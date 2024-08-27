@@ -385,7 +385,7 @@ for book in books:
 - `prefetch_related` ko'p-to-ko'p bog'lanishlar yoki katta hajmdagi bog'langan ob'ektlar uchun ishlatiladi va so'rovlar sonini kamaytiradi, lekin ularni alohida-alohida bajaradi.
 
 
-
+## Python Queue Example
 ```python
 import queue
 import threading
