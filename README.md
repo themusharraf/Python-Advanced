@@ -386,5 +386,42 @@ for book in books:
 
 
 
+```python
+import queue
+import threading
+import time
+
+# Telegram botiga yuborilayotgan buyruqlar navbati (queue)
+command_queue = queue.Queue()
+
+# Bu funksiya botga kelayotgan buyruqlarni navbatga qo'shadi
+def add_command_to_queue(command):
+    print(f"Buyruq qo'shildi: {command}")
+    command_queue.put(command)
+
+# Bu funksiya navbatdagi buyruqlarni ketma-ket bajaradi
+def process_commands():
+    while True:
+        # Navbatdan buyruqni olish
+        command = command_queue.get()
+        if command is None:
+            break
+        print(f"Buyruqni bajarish: {command}")
+        time.sleep(2)  # Buyruqni bajarishga sarflanadigan vaqt
+        command_queue.task_done()
+        print(f"Buyruq bajarildi: {command}")
+
+# Buyruqlarni qabul qilish uchun yangi threading
+threading.Thread(target=process_commands, daemon=True).start()
+
+# Botga kelayotgan buyruqlar
+add_command_to_queue("/start")
+add_command_to_queue("/help")
+add_command_to_queue("/settings")
+
+# Buyruqlar navbatda bajarilguncha kutish
+command_queue.join()
+
+print("Barcha buyruqlar bajarildi!")```
 
 
