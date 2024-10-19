@@ -10,7 +10,7 @@
   aniqlanadi.
 - Bu xotiradan yanada samarali foydalanish imkonini beradi va cheksiz ketma-ketlikni yaratishi mumkin.
 
-```python
+```python 
 '''
 Iterator
 ''' 
