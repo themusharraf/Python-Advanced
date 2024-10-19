@@ -12,7 +12,7 @@
 
 ```python
 '''
-Generator
+Iterator
 '''
 import time
 
