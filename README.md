@@ -1,6 +1,6 @@
 # Advanced Python
 
-## Python-ga chuqurroq sho'ng'ing va kodlash mahoratingizni oshiring.📡
+## Python-ga chuqurroq sho'ng'ing va kodlash mahoratingizni oshiring. 
 
 ## Python generatori:
 
