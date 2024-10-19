@@ -179,6 +179,145 @@ def divider(a, b):
 print(divider(10, 5))  # 2.0
 print(divider(10, 0))  # 10.0
 ```
+```python
+'''
+Decorator
+'''
+import time
+
+
+# def add(a, b):
+#     return a + b
+#
+#
+# # print(add.__call__(1, 2))
+# # print(add(1, 2))
+#
+#
+# def calc(func, a, b):
+#     return func(a, b)
+#
+#
+# result = calc(add, 1, 4)
+# print(result)
+
+# def adder(n):
+#     def inner(m):
+#         return 5 + m
+#     return inner
+#
+#
+# add_5 = adder(5)
+
+# def func():
+#     def another_func():
+#         return 1
+#     return another_func
+#
+# print(func()())
+
+# def do():
+#     started = time.time()
+#     print(started)
+#     time.sleep(3)
+#     print("done")
+#     finished = time.time()
+#     print(finished)
+#     print(f"took {finished - started} seconds")
+#
+#
+# do()
+
+# def do1():
+#     started = time.time()
+#     print(started)
+#     time.sleep(3)
+#     print("done")
+#     finished = time.time()
+#     print(finished)
+#     print(f"took {finished - started} seconds")
+#
+#
+# do1()
+
+# def timer(func):
+#     started = time.time()
+#     func()
+#     fnished = time.time()
+#     print(f"took {fnished - started} seconds")
+#
+# timer(do())
+# timer(do2())
+
+# not called
+
+# def timer(func):
+#     def inner():
+#         started = time.time()
+#         func()
+#         fnished = time.time()
+#         print(f"took {fnished - started} seconds")
+#
+#     return inner
+
+
+#
+#
+# # do = timer(do())
+# # do2 timer(do2())
+#
+# do()
+# do2()
+
+# @timer
+# def dos():
+#     time.sleep(3)
+#     print("done")
+
+# def star(func):
+#     def inner():
+#         print("*" * 12)
+#         func()
+#         print("*" * 12)
+#
+#     return inner
+# def presnet(func):
+#     def inner():
+#         print("%" * 12)
+#         func()
+#         print("%" * 12)
+#
+#     return inner
+
+#
+# @star
+# @presnet
+# def hello():
+#     print("Hello World")
+#
+#
+# hello()
+
+# def wrap(char):
+#     def wrapper(func):
+#         def inner():
+#             print(char * 12)
+#             func()
+#             print(char * 12)
+#
+#         return inner
+#
+#     return wrapper
+#
+#
+# @wrap("%")
+# @wrap("*")
+# def hello():
+#     print("Hello World")
+#
+#
+# hello()
+```
 
 # Typing modul
 
