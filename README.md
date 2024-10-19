@@ -10,6 +10,31 @@
   aniqlanadi.
 - Bu xotiradan yanada samarali foydalanish imkonini beradi va cheksiz ketma-ketlikni yaratishi mumkin.
 
+```python
+'''
+Generator
+'''
+import time
+
+
+def answer():
+    result = []
+
+    time.sleep(3)
+    result.append(14)
+
+    time.sleep(3)
+    result.append(44)
+
+    time.sleep(3)
+    result.append(75)
+
+    return result
+
+
+for x in answer():
+    print(x)
+```
 https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4b07-8954-4f9eea043745
 
 # Decorator
