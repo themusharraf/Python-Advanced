@@ -35,6 +35,27 @@ def answer():
 for x in answer():
     print(x)
 ```
+```python
+'''
+Generator
+'''
+import time
+
+
+def answer():
+    time.sleep(3)
+    yield 14
+
+    time.sleep(3)
+    yield 44
+
+    time.sleep(3)
+    yield 75
+
+
+for x in answer():
+    print(x)
+```
 https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4b07-8954-4f9eea043745
 
 # Decorator
