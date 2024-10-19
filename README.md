@@ -58,6 +58,48 @@ for x in answer():
 ```
 https://github.com/themusharraf/Advanced_Python/assets/122869450/4813cbf1-54ad-4b07-8954-4f9eea043745
 
+```python
+'''
+Generator range()
+'''
+import time
+
+
+# def answer():
+#     while True:
+#         time.sleep(3)
+#         yield 75
+#
+#
+# for x in answer():
+#     print(x * x)
+
+def reverse(nums: list):
+    n = len(nums)
+    for x in range(n - 1, -1, -1):
+        yield nums[x]
+
+
+# for x in reverse([1, 2, 3]):
+#     print(x)
+# print(list(reverse([1, 2, 3])))
+
+iterator = iter(reverse([1, 2, 3, 4, 5]))
+while True:
+    try:
+        n = next(iterator)
+    except StopIteration:
+        break
+    print(n)
+
+for r in reverse([1, 2, 3, 4, 5]):
+    print(r)
+
+for x in range(100000000):  # range() generator
+    time.sleep(1)
+    print(x)
+```
+
 # Decorator
 
 #### Dekoratorlar yuqori darajadagi funktsiyalarni chaqirish uchun oddiy sintaksisni ta'minlaydi. Ta'rifga ko'ra, dekorator boshqa funktsiyani qabul qiladigan va ikkinchi funktsiyaning harakatini aniq o'zgartirmasdankengaytiradigan funktsiyadir.Bu chalkash tuyuladi, lekin aslida unday emas, ayniqsa dekorativlar qanday ishlashiga oid bir nechta misollarni ko'rganingizdan keyin. Ushbu maqoladagi barcha misollarni bu erda topishingiz mumkin.
