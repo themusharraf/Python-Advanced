@@ -320,7 +320,8 @@ import time
 ```
 # Context Mangers
 ```python
-# Context Managers
+'''Context Managers
+'''
 # with open('file.txt', 'w') as file:
 #     file.write("Hello")
 #
