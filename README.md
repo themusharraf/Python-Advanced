@@ -318,7 +318,76 @@ import time
 #
 # hello()
 ```
+# Context Mangers
+```python
+# Context Managers
+# with open('file.txt', 'w') as file:
+#     file.write("Hello")
+#
+# file = open('file,txt', 'w')
+# file.write('All Nc')
+# file.close()
 
+# class FileOpener:
+#     def __init__(self, filename, mode='r'):
+#         self.filename = filename,
+#         self.mode = mode
+#         self.opened_file = None
+#
+#     def __enter__(self):
+#         print("Entered")
+#         return 1
+#
+#     def __exit__(self, exc_type, exc_val, exc_tb):
+#         print('Exited')
+#
+#
+# with FileOpener('file,txt', 'w') as file:
+#     print('file', file)
+#     print('nima_dir boldi')
+
+# class FileOpener:
+#     def __init__(self, filename, mode='r'):
+#         self.filename = filename
+#         self.mode = mode
+#         self.opened_file = None
+#
+#     def __enter__(self):
+#         print("Entered")
+#         self.opened_file = open(self.filename, self.mode)
+#         return self.opened_file
+#
+#     def __exit__(self, exc_type, exc_val, exc_tb):
+#         print('Exited')
+#         if self.opened_file:
+#             self.opened_file.close()
+#
+#
+# with FileOpener('file.txt', 'w') as file:
+#     print('file', file)
+#     file.write('All Nc')
+#     raise Exception
+#     print('nima_dir boldi')
+
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def file_opener(filename, mode):
+    file = open(filename, mode)
+    print('open file')
+    try:
+        yield file
+    finally:
+        file.close()
+        print('closed file')
+
+
+with file_opener('files.txt', 'w') as file:
+    print('file', file)
+    raise Exception
+```
 # Typing modul
 
 ## Asosiy turlar
