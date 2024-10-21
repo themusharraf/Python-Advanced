@@ -388,6 +388,11 @@ def file_opener(filename, mode):
 with file_opener('files.txt', 'w') as file:
     print('file', file)
     raise Exception
+
+
+'''
+log nomli kontekst meneger yarating, u qaysi kontext qachon ochilganini va qachon  kontext yopilganini vaqtnini ekranga chiqarsin.
+'''
 ```
 # Typing modul
 
