@@ -392,6 +392,16 @@ with file_opener('files.txt', 'w') as file:
 
 '''
 log nomli kontekst meneger yarating, u qaysi kontext qachon ochilganini va qachon  kontext yopilganini vaqtnini ekranga chiqarsin.
+
+Misol:
+
+with log():
+     print("hello")
+
+Output:
+- context manager opened at 8:43:35
+hello
+- context manager closed at 8:43:36
 '''
 ```
 # Typing modul
