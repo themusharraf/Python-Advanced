@@ -320,6 +320,20 @@ import time
 
 '''
 log nomli dekorator yarating, u qaysi funksiya qachon chaqirilganini va qachon funksiya tugagani vaqtnini ekranga chiqarsin. Vaqtni formatlashni https://strftime.org/ saytidan ko'rishingiz mumkin.
+
+
+Misol:
+@log
+def hello():
+     print("hello")
+
+hello()
+
+Output:
+- called function: hello at 8:43:35
+hello
+- finished function: hello at 8:43:36
+
 '''
 
 ```
