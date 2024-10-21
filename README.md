@@ -317,6 +317,11 @@ import time
 #
 #
 # hello()
+
+'''
+log nomli dekorator yarating, u qaysi funksiya qachon chaqirilganini va qachon funksiya tugagani vaqtnini ekranga chiqarsin. Vaqtni formatlashni https://strftime.org/ saytidan ko'rishingiz mumkin.
+'''
+
 ```
 # Context Mangers
 ```python
